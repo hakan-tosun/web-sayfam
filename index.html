@@ -1,213 +1,89 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <title>Hakkımda</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-    <style>
-        body, html {
-            height: 100%;
-        }
-
-        .center-content {
-            padding-top: 100px;
-            padding-bottom: 50px;
-        }
-
-        img {
-            width: 200px;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .custom-navbar {
-    background-color: #93BFA3 !important;
-}
-
-.navbar .nav-link {
-    color: white !important;
-    padding: 10px 20px;
-    font-weight: 500;
-}
-
-.navbar .nav-link.active,
-.navbar .nav-link:hover {
-    color: #03585D !important;
-    font-weight: bold;
-    text-decoration: underline;
-}
-.nav-link {
-    text-decoration: none !important;
-}
-
-.nav-link:hover, .nav-link:focus, .nav-link:active {
-    text-decoration: none;
-}
-
-.card {
-    border-radius: 12px;
-    border: none;
-    transition: transform 0.2s ease;
-}
-
-.card:hover {
-    transform: scale(1.02);
-}
-
-.card-title {
-    color: #0d6efd;
-}
-
-.card-body p {
-    font-size: 1rem;
-    color: #444;
-}
-
-.card-title {
-    color: #008773; 
-}
-
-.text-primary {
-    color: #008773 !important;
-}
-
-body {
-    background-color: #f0f0f0;
-}
-
-.icon {
-    width: 20px !important;
-    height: 20px !important;
-    object-fit: contain;
-    display: inline-block;
-}
-
-
-    </style>
+  <meta charset="UTF-8">
+  <title>Hakkımda</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="bg-default">
 
-<!-- Yatay Menü -->
+<!-- Navbar -->
 <nav class="navbar custom-navbar fixed-top border-bottom">
-  <div class="container-fluid justify-content-center">
+  <div class="container justify-content-center">
     <ul class="nav">
-      <li class="nav-item">
-        <a class="nav-link active" href="index.html">Hakkımda</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="cv.html">Özgeçmiş</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="sehrim.html">Şehrim</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="takimimiz.html">Takımımız</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="ilgi-alanlarim.html">İlgi Alanlarım</a>
-      </li>
+      <li class="nav-item"><a class="nav-link active" href="index.html">Hakkımda</a></li>
+      <li class="nav-item"><a class="nav-link" href="cv.html">Özgeçmiş</a></li>
+      <li class="nav-item"><a class="nav-link" href="sehrim.html">Şehrim</a></li>
+      <li class="nav-item"><a class="nav-link" href="takimimiz.html">Takımımız</a></li>
+      <li class="nav-item"><a class="nav-link" href="ilgi-alanlarim.html">İlgi Alanlarım</a></li>
     </ul>
   </div>
 </nav>
 
+<!-- İçerik -->
+<div class="container mt-5 pt-5">
+  <div class="card">
+    <h1 class="text-center">Hakan Tosun</h1>
+    <p class="text-center text-dark">Bilgisayar Mühendisliği • Sakarya Üniversitesi</p>
+  </div>
 
+  <div class="card">
+    <h2>Ben Kimim?</h2>
+    <p>Merhaba! Ben <strong>Hakan Tosun</strong>. Sakarya Üniversitesi'nde Bilgisayar Mühendisliği 1. sınıf öğrencisiyim. Yazılıma olan ilgim lise yıllarında başladı. Web teknolojileri, masaüstü uygulamalar ve yeni teknolojileri öğrenmeyi severim.</p>
+  </div>
 
-<!-- Sayfa İçeriği -->
-<div class="container center-content">
-    <div class="col-md-10 mx-auto">
-        <header class="mb-4 text-center">
-            <h1 class="text-primary">HAKAN TOSUN</h1>
-            <p class="lead">Bilgisayar Mühendisliği • Sakarya Üniversitesi</p>
-        </header>
+  <div class="card">
+    <h2>Hobilerim</h2>
+    <ul>
+      <li>Futbol izlemek ve oynamak</li>
+      <li>Satranç oynamak</li>
+      <li>Seyahat etmek</li>
+      <li>Çizim yapmak</li>
+    </ul>
+  </div>
 
-        <main class="container mt-5">
-    <div class="row g-4">
-
-        <!-- Kendimi Tanıtayım -->
-        <div class="col-md-6">
-            <div class="card shadow-sm">
-                <div class="card-body">
-                    <h3 class="card-title">Ben Kimim?</h3>
-                    <p class="card-text">Merhaba! Ben <strong>Hakan Tosun</strong>. Sakarya Üniversitesi'nde Bilgisayar Mühendisliği 1. sınıf öğrencisiyim. Yazılıma olan ilgim lise yıllarında başladı. Boş zamanlarımda futbol izler, spor yapar ve yeni teknolojileri öğrenmeye çalışırım.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Hobilerim -->
-        <div class="col-md-6">
-            <div class="card shadow-sm">
-                <div class="card-body">
-                    <h3 class="card-title">Hobilerim</h3>
-                    <ul class="card-text">
-                        <li>Futbol izlemek ve oynamak</li>
-                        <li>Satranç oynamak</li>
-                        <li>Seyahat etmek</li>
-                        <li>Çizim yapmak</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <!-- Sevdiğim Sporlar -->
-<div class="col-12">
-    <div class="card shadow-sm">
-        <div class="card-body">
-            <h3 class="card-title">Sevdiğim Sporlar</h3>
-            <div class="row text-center">
-                <div class="col-md-4 mb-3">
-                    <img src="img/futbol.jpeg" class="img-fluid rounded" alt="Futbol" style="width: 200px; height: 200px; object-fit: cover;">
-                    <p class="mt-2 fw-semibold">Futbol</p>
-                </div>
-                <div class="col-md-4 mb-3">
-                    <img src="img/tenis.jpeg" class="img-fluid rounded" alt="Tenis" style="width: 200px; height: 200px; object-fit: cover;">
-                    <p class="mt-2 fw-semibold">Tenis</p>
-                </div>
-                <div class="col-md-4 mb-3">
-                    <img src="img/taekwondo.jpg" class="img-fluid rounded" alt="Taekwondo" style="width: 200px; height: 200px; object-fit: cover;">
-                    <p class="mt-2 fw-semibold">Taekwondo</p>
-                </div>
-            </div>
-        </div>
-    </div>
+  <div class="card">
+    <h2>Sevdiğim Sporlar</h2>
+    <div class="row text-center">
+  <div class="col-md-4 mb-3">
+    <img src="img/futbol.jpeg" class="spor-img" alt="Futbol">
+    <p class="mt-2 fw-semibold">Futbol</p>
+  </div>
+  <div class="col-md-4 mb-3">
+    <img src="img/tenis.jpeg" class="spor-img" alt="Tenis">
+    <p class="mt-2 fw-semibold">Tenis</p>
+  </div>
+  <div class="col-md-4 mb-3">
+    <img src="img/taekwondo.jpg" class="spor-img" alt="Taekwondo">
+    <p class="mt-2 fw-semibold">Taekwondo</p>
+  </div>
 </div>
+  </div>
 
-
-<!-- Bağlantılarım -->
-<div class="col-12">
-    <div class="card shadow-sm">
-        <div class="card-body">
-            <h3 class="card-title">Bağlantılarım</h3>
-            <ul class="list-unstyled">
-    <li class="mb-2 d-flex align-items-center">
+  <div class="card">
+    <h2>Bağlantılarım</h2>
+    <ul class="list-unstyled">
+      <li class="mb-2 d-flex align-items-center">
         <img src="img/github.png" alt="GitHub" class="icon me-2">
-        <a href="https://github.com/hakan-tosun" target="_blank" class="text-decoration-none text-dark fw-medium">
-            GitHub
-        </a>
-    </li>
-    <li class="d-flex align-items-center">
+        <a href="https://github.com/hakan-tosun" target="_blank" class="text-decoration-none text-dark fw-medium">GitHub</a>
+      </li>
+      <li class="d-flex align-items-center">
         <img src="img/linkedin.webp" alt="LinkedIn" class="icon me-2">
-        <a href="https://www.linkedin.com/in/hakan-tosun-2b4154196" target="_blank" class="text-decoration-none text-dark fw-medium">
-            LinkedIn
-        </a>
-    </li>
-</ul>
-        </div>
-    </div>
+        <a href="https://www.linkedin.com/in/hakan-tosun-2b4154196" target="_blank" class="text-decoration-none text-dark fw-medium">LinkedIn</a>
+      </li>
+    </ul>
+  </div>
 </div>
 
-
-
-</main>
-
-
-        <footer class="mt-5 text-muted text-center">
-            &copy; 2025 Hakan Tosun.
-        </footer>
-    </div>
-</div>
+<!-- Footer -->
+<footer class="card text-center mt-5">
+  <div class="card-body py-3">
+    &copy; 2025 Hakan Tosun.
+  </div>
+</footer>
 
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

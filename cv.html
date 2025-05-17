@@ -1,147 +1,70 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <title>Özgeçmiş</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-    <style>
-        /* Genel Stil */
-        body {
-            background-color: #f0f0f0; /* Arka planı açık gri yaptık */
-        }
-        
-        .custom-navbar {
-            background-color: #93BFA3 !important; /* Navbar rengi */
-        }
-
-        .navbar .nav-link {
-            color: white !important;
-            padding: 10px 20px;
-            font-weight: 500;
-        }
-
-        .navbar .nav-link.active,
-        .navbar .nav-link:hover {
-            color: #03585D !important;
-            font-weight: bold;
-            text-decoration: underline;
-        }
-
-        .nav-link {
-    text-decoration: none !important;
-}
-
-.nav-link:hover, .nav-link:focus, .nav-link:active {
-    text-decoration: none;
-}
-
-        /* Başlıklar */
-        h1.text-primary {
-            color: #03585D !important;
-            font-size: 40px;
-            font-weight: bold;
-        }
-
-        h2, h4 {
-            color: #008773; /* Yeşil tonu */
-        }
-
-        /* Kart Tasarımı */
-        .card {
-            border-radius: 12px;
-            border: none;
-            background-color: white;
-            padding: 20px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        /* İçerik Merkezi */
-        .center-content {
-            padding-top: 100px;
-            padding-bottom: 50px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>Özgeçmiş</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="bg-default">
 
 <!-- Navbar -->
 <nav class="navbar custom-navbar fixed-top border-bottom">
-    <div class="container-fluid justify-content-center">
-        <ul class="nav">
-            <li class="nav-item">
-                <a class="nav-link" href="index.html">Hakkımda</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link active" href="cv.html">Özgeçmiş</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="sehrim.html">Şehrim</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="takimimiz.html">Takımımız</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="ilgi-alanlarim.html">İlgi Alanlarım</a>
-            </li>
-        </ul>
-    </div>
+  <div class="container justify-content-center">
+    <ul class="nav">
+      <li class="nav-item"><a class="nav-link" href="index.html">Hakkımda</a></li>
+      <li class="nav-item"><a class="nav-link active" href="cv.html">Özgeçmiş</a></li>
+      <li class="nav-item"><a class="nav-link" href="sehrim.html">Şehrim</a></li>
+      <li class="nav-item"><a class="nav-link" href="takimimiz.html">Takımımız</a></li>
+      <li class="nav-item"><a class="nav-link" href="ilgi-alanlarim.html">İlgi Alanlarım</a></li>
+    </ul>
+  </div>
 </nav>
 
-<!-- Sayfa İçeriği -->
-<div class="container center-content">
-    <div class="col-md-10 mx-auto">
-        <header class="mb-4 text-center">
-            <h1 class="text-primary">Özgeçmiş</h1>
-        </header>
+<!-- İçerik -->
+<div class="container mt-5 pt-5">
+  <div class="card text-center">
+    <h1 class="text-center">Özgeçmiş</h1>
+  </div>
 
-        <main class="container mt-5">
-            <div class="row g-4">
-
-                <!-- Eğitim Bilgileri -->
-                <div class="col-md-6">
-                    <div class="card shadow-sm">
-                        <div class="card-body">
-                            <h2>Eğitim</h2>
-                            <article>
-                                <h4>Sakarya Üniversitesi</h4>
-                                <p><strong>Lisans - Bilgisayar Mühendisliği</strong><br>2023 - Devam Ediyor</p>
-                            </article>
-                            <article>
-                                <h4>Hasan Aybaba Anadolu Lisesi (Osmaniye)</h4>
-                                <p><strong>Lise Eğitimi</strong><br>2019 - 2023</p>
-                            </article>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Yetenekler -->
-                <div class="col-md-6">
-                    <div class="card shadow-sm">
-                        <div class="card-body">
-                            <h2>Yetenekler</h2>
-                            <ul>
-                                <li>HTML, CSS, JavaScript</li>
-                                <li>Bootstrap, React (temel)</li>
-                                <li>Git ve GitHub</li>
-                                <li>C#, C++</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </main>
-
-        <footer class="mt-5 text-muted text-center">
-            &copy; 2025 Hakan Tosun
-        </footer>
+  <div class="row mt-4">
+    <div class="col-md-6">
+      <div class="card">
+        <h2>Eğitim</h2>
+        <article>
+          <h4>Sakarya Üniversitesi</h4>
+          <p><strong>Lisans - Bilgisayar Mühendisliği</strong><br>2023 - Devam Ediyor</p>
+        </article>
+        <article>
+          <h4>Hasan Aybaba Anadolu Lisesi (Osmaniye)</h4>
+          <p><strong>Lise Eğitimi</strong><br>2019 - 2023</p>
+        </article>
+      </div>
     </div>
+
+    <div class="col-md-6">
+      <div class="card">
+        <h2>Yetenekler</h2>
+        <ul>
+          <li>HTML, CSS, JavaScript</li>
+          <li>Bootstrap, React (temel)</li>
+          <li>Git ve GitHub</li>
+          <li>C#, C++</li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </div>
 
-<!-- Bootstrap JS -->
+<!-- Footer -->
+<footer class="card text-center mt-5">
+  <div class="card-body py-3">
+    &copy; 2025 Hakan Tosun.
+  </div>
+</footer>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

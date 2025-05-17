@@ -1,0 +1,108 @@
+/* Genel (sade) arka plan */
+.bg-default {
+    background-color: #AFC9DB;
+}
+
+/* Takım sayfasına özel arka plan */
+.bg-takim {
+    background: repeating-linear-gradient(
+        90deg,
+        #F6E91D,
+        #F6E91D 150px,
+        #008773 150px,
+        #008773 300px
+    );
+}
+
+
+/* === NAVBAR === */
+.custom-navbar {
+    background-color: #6EB2C4 !important;
+}
+
+.navbar .nav-link {
+    color: white !important;
+    padding: 10px 20px;
+    text-decoration: none !important;
+}
+
+.navbar .nav-link.active,
+.navbar .nav-link:hover {
+    color: #03585D !important;
+    font-weight: bold;
+    text-decoration: none !important;
+}
+
+/* === BAŞLIKLAR === */
+h1, h2, h3, h4 {
+    color: #03585D;
+    font-weight: bold;
+}
+
+h1.text-white {
+    color: white !important;
+}
+
+/* === KART STİLİ === */
+.card {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    margin-bottom: 30px;
+    backdrop-filter: blur(2px);
+}
+
+/* === SLIDER GÖRSELLERİ === */
+.slider-img {
+    height: 400px;
+    object-fit: cover;
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* === TAKIM LOGOSU === */
+.team-logo {
+    max-width: 200px;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* === İKONLAR (BAĞLANTILARIM) === */
+.icon {
+    width: 20px !important;
+    height: 20px !important;
+    object-fit: contain;
+    display: inline-block;
+}
+
+/* === FOOTER === */
+footer {
+    background-color: #6EB2C4 !important;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.95rem;
+    color: white !important;
+    font-weight: bold;
+}
+
+.spor-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.card h1,
+.card h2,
+.card h3 {
+    text-align: center;
+}
+
+.card h2 {
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 8px;
+    margin-bottom: 15px;
+}
