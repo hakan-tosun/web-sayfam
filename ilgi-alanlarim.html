@@ -11,14 +11,25 @@
 
 <!-- Navbar -->
 <nav class="navbar custom-navbar fixed-top border-bottom">
-  <div class="container justify-content-center">
-    <ul class="nav">
-      <li class="nav-item"><a class="nav-link" href="index.html">Hakkımda</a></li>
-      <li class="nav-item"><a class="nav-link" href="cv.html">Özgeçmiş</a></li>
-      <li class="nav-item"><a class="nav-link" href="sehrim.html">Şehrim</a></li>
-      <li class="nav-item"><a class="nav-link" href="takimimiz.html">Takımımız</a></li>
-      <li class="nav-item"><a class="nav-link active" href="ilgi-alanlarim.html">İlgi Alanlarım</a></li>
+  <div class="container">
+    <ul class="nav mx-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="index.html">Hakkımda</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="cv.html">Özgeçmiş</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="sehrim.html">Şehrim</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="takimimiz.html">Takımımız</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="ilgi-alanlarim.html">İlgi Alanlarım</a>
+      </li>
     </ul>
+    <a class="btn btn-outline-light ms-auto" href="login.html">Login</a>
   </div>
 </nav>
 
@@ -80,6 +91,8 @@ function filmAra(filmAdi) {
         <img src="${data.Poster}" class="poster-kucuk mb-3" alt="Poster">
         <p>${data.Plot}</p>
       `;
+
+      document.getElementById("filmSonuc").scrollIntoView({ behavior: 'smooth' });
     })
     .catch(err => {
       document.getElementById("filmSonuc").innerHTML = `<p class="text-danger">Veri alınamadı.</p>`;
