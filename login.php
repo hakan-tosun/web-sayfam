@@ -1,29 +1,19 @@
 <?php
-// Değişkenler
-$dogru_email = "b2412100001@sakarya.edu.tr";
-$dogru_sifre = "b2412100001";
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
-// POST kontrolü
+$dogru_email = "b231210018@sakarya.edu.tr";
+$dogru_sifre = "b231210018";
+
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $email = $_POST["email"] ?? '';
     $sifre = $_POST["password"] ?? '';
 
     if ($email === $dogru_email && $sifre === $dogru_sifre) {
-        echo "<!DOCTYPE html>
-        <html lang='tr'>
-        <head>
-            <meta charset='UTF-8'>
-            <title>Giriş Başarılı</title>
-            <link rel='stylesheet' href='css/style.css'>
-        </head>
-        <body>
-            <div style='margin-top: 100px; text-align: center;'>
-                <h2>Hoşgeldiniz <strong>$sifre</strong></h2>
-            </div>
-        </body>
-        </html>";
+        echo "<h2 style='text-align: center; margin-top: 50px;'>Hoşgeldiniz <strong>" . htmlspecialchars($sifre) . "</strong></h2>";
     } else {
-        header("Location: login.html");
+        // Yanlış bilgi girilirse login.html'e hata parametresiyle geri dön
+        header("Location: login.html?error=1");
         exit();
     }
 } else {
