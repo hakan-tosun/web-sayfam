@@ -6,98 +6,96 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    .poster-kucuk {
+      max-width: 150px;
+      height: auto;
+      border-radius: 8px;
+    }
+  </style>
 </head>
 <body class="bg-default">
 
 <!-- Navbar -->
-<nav class="navbar custom-navbar fixed-top border-bottom">
-  <div class="container">
-    <ul class="nav mx-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="index.html">Hakkımda</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="cv.html">Özgeçmiş</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="sehrim.html">Şehrim</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="takimimiz.html">Takımımız</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="ilgi-alanlarim.html">İlgi Alanlarım</a>
-      </li>
-    </ul>
-    <a class="btn btn-outline-light ms-auto" href="login.html">Login</a>
+<nav class="navbar custom-navbar fixed-top border-bottom" style="background-color: #93BFA3;">
+  <div class="container d-flex justify-content-between align-items-center">
+    <div class="mx-auto">
+      <ul class="nav justify-content-center">
+        <li class="nav-item"><a class="nav-link" href="index.html">Hakkımda</a></li>
+        <li class="nav-item"><a class="nav-link" href="cv.html">Özgeçmiş</a></li>
+        <li class="nav-item"><a class="nav-link" href="sehrim.html">Şehrim</a></li>
+        <li class="nav-item"><a class="nav-link" href="takimimiz.html">Takımımız</a></li>
+        <li class="nav-item"><a class="nav-link active fw-bold text-decoration-underline" href="ilgi-alanlarim.html">İlgi Alanlarım</a></li>
+        <li class="nav-item"><a class="nav-link" href="iletisim.html">İletişim</a></li>
+      </ul>
+    </div>
+    <div class="ms-auto">
+      <a class="btn btn-outline-light" href="login.html">Login</a>
+    </div>
   </div>
 </nav>
 
 <!-- Sayfa Başlığı -->
 <div class="container mt-5 pt-5">
-  <div class="card text-center">
-    <h1 class="text-center">Sevdiğim Dizi & Filmler</h1>
+  <div class="card text-center mb-4">
+    <h1>Sevdiğim Dizi & Filmler</h1>
   </div>
 
-  <!-- Filmler -->
-  <div class="card">
-    <h2>🎬 Filmler</h2>
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item"><a href="#" onclick="filmAra('Shutter Island')">Shutter Island</a></li>
-      <li class="list-group-item"><a href="#" onclick="filmAra('Interstellar')">Interstellar</a></li>
-      <li class="list-group-item"><a href="#" onclick="filmAra('Se7en')">Seven</a></li>
-    </ul>
-  </div>
+  <!-- Filmler Kartları -->
+  <h2 class="mb-3 text-center">🎬 Filmler</h2>
+  <div class="row" id="filmContainer"></div>
 
-  <!-- Diziler -->
-<div class="card">
-  <h2>📺 Diziler</h2>
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item"><a href="#" onclick="filmAra('The Sopranos')">The Sopranos</a></li>
-    <li class="list-group-item"><a href="#" onclick="filmAra('Dark')">Dark</a></li>
-    <li class="list-group-item"><a href="#" onclick="filmAra('The Office')">The Office</a></li>
-  </ul>
+  <!-- Diziler Kartları -->
+  <h2 class="mt-5 mb-3 text-center">📺 Diziler</h2>
+  <div class="row" id="diziContainer"></div>
 </div>
 
-  <!-- Sonuçlar -->
-  <div id="filmSonuc" class="card mt-4 text-center"></div>
-</div>
-
-<!-- Footer -->
-<footer class="card text-center mt-5">
-  <div class="card-body py-3">
-    &copy; 2025 Hakan Tosun.
-  </div>
+<!-- FOOTER -->
+<footer class="text-center text-muted py-3 bg-light mt-5 border-top">
+  &copy; 2025 Hakan Tosun.
 </footer>
 
+<!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-<!-- API -->
+<!-- OMDB API JavaScript -->
 <script>
-function filmAra(filmAdi) {
-  const apiKey = 'ef32db96';
-  const url = `https://www.omdbapi.com/?t=${encodeURIComponent(filmAdi)}&apikey=${apiKey}`;
+const apiKey = "ef32db96";
 
-  fetch(url)
-    .then(res => res.json())
-    .then(data => {
-      if (data.Response === "False") {
-        document.getElementById("filmSonuc").innerHTML = `<p class="text-danger">${data.Error}</p>`;
-        return;
-      }
+// Filmler ve diziler
+const filmler = ["Shutter Island", "Interstellar", "Se7en"];
+const diziler = ["The Sopranos", "Dark", "The Office"];
 
-      document.getElementById("filmSonuc").innerHTML = `
-        <h3>${data.Title} (${data.Year})</h3>
-        <img src="${data.Poster}" class="poster-kucuk mb-3" alt="Poster">
-        <p>${data.Plot}</p>
-      `;
+function filmVerisiYukle(arananlar, containerId) {
+  const container = document.getElementById(containerId);
+  container.innerHTML = '';
 
-      document.getElementById("filmSonuc").scrollIntoView({ behavior: 'smooth' });
-    })
-    .catch(err => {
-      document.getElementById("filmSonuc").innerHTML = `<p class="text-danger">Veri alınamadı.</p>`;
-    });
+  arananlar.forEach(ad => {
+    fetch(`https://www.omdbapi.com/?t=${encodeURIComponent(ad)}&apikey=${apiKey}`)
+      .then(res => res.json())
+      .then(data => {
+        if (data.Response === "True") {
+          const col = document.createElement("div");
+          col.className = "col-md-4 mb-4";
+
+          col.innerHTML = `
+            <div class="card h-100 text-center p-3">
+              <img src="${data.Poster}" class="poster-kucuk mx-auto mb-2" alt="${data.Title}">
+              <h5 class="card-title">${data.Title} (${data.Year})</h5>
+              <p class="card-text">${data.Plot}</p>
+            </div>
+          `;
+
+          container.appendChild(col);
+        }
+      });
+  });
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  filmVerisiYukle(filmler, "filmContainer");
+  filmVerisiYukle(diziler, "diziContainer");
+});
 </script>
 </body>
 </html>

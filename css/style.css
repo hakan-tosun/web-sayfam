@@ -55,10 +55,25 @@ h1.text-white {
 
 /* === SLIDER GÖRSELLERİ === */
 .slider-img {
-    height: 400px;
+    height: 500px;
     object-fit: cover;
     width: 100%;
     border-radius: 10px;
+}
+
+.carousel-caption-custom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5); /* şeffaf siyah */
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 1.25rem;
+  font-weight: bold;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 
 /* === TAKIM LOGOSU === */
@@ -114,5 +129,19 @@ footer {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   display: block;
   margin: auto;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
 }
 
