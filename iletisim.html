@@ -33,7 +33,7 @@
         <li class="nav-item"><a class="nav-link" href="sehrim.html">Şehrim</a></li>
         <li class="nav-item"><a class="nav-link" href="takimimiz.html">Takımımız</a></li>
         <li class="nav-item"><a class="nav-link" href="ilgi-alanlarim.html">İlgi Alanlarım</a></li>
-        <li class="nav-item"><a class="nav-link" href="iletisim.html">İletişim</a></li>
+        <li class="nav-item"><a class="nav-link active fw-bold text-decoration-underline" href="iletisim.html">İletişim</a></li>
       </ul>
     </div>
 
@@ -89,7 +89,7 @@
       </div>
 
       <button type="button" class="btn btn-warning me-2" onclick="classicValidation()">JS ile Kontrol Et</button>
-      <button type="submit" class="btn btn-primary me-2">Gönder</button>
+      <button type="submit" class="btn btn-primary me-2" :disabled="!formGecerliMi">Gönder</button>
       <button type="reset" class="btn btn-secondary" @click="clearForm()">Temizle</button>
     </form>
   </div>
@@ -138,30 +138,33 @@ new Vue({
     mesaj: '',
     formError: ''
   },
+  computed: {
+    formGecerliMi() {
+      const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/i;
+      const phonePattern = /^[0-9]{10,15}$/;
+
+      return (
+        this.ad.trim() !== '' &&
+        this.email.trim() !== '' &&
+        emailPattern.test(this.email) &&
+        this.telefon.trim() !== '' &&
+        phonePattern.test(this.telefon) &&
+        this.cinsiyet !== '' &&
+        this.sehir !== '' &&
+        this.mesaj.trim() !== ''
+      );
+    }
+  },
   methods: {
     clearForm() {
       this.ad = this.email = this.telefon = this.cinsiyet = this.sehir = this.mesaj = '';
       this.formError = '';
     },
     validateVueForm() {
-      const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/i;
-      const phonePattern = /^[0-9]{10,15}$/;
-
-      if (!this.ad || !this.email || !this.telefon || !this.cinsiyet || !this.sehir || !this.mesaj) {
-        this.formError = "Lütfen tüm alanları doldurun.";
+      if (!this.formGecerliMi) {
+        this.formError = "Lütfen tüm alanları doğru şekilde doldurun.";
         return false;
       }
-
-      if (!emailPattern.test(this.email)) {
-        this.formError = "Geçerli bir e-mail adresi giriniz (örnek: ad@site.com).";
-        return false;
-      }
-
-      if (!phonePattern.test(this.telefon)) {
-        this.formError = "Telefon sadece rakamlardan oluşmalı ve 10-15 hane olmalı.";
-        return false;
-      }
-
       this.formError = '';
       return true;
     }
